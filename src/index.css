@@ -1,13 +1,337 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Numans&family=Open+Sans:wght@400;600&family=Poppins:wght@300&family=Quicksand:wght@500&display=swap');
+
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Numans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.App{
+  
+  overflow-x: hidden;
+  max-width: 800px;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #222;
+  margin: auto;
+  
+  
+}
+
+.Header{
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  color: white;
+
+}
+
+.Header .title{
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.Header h2{
+  margin-left: 10px;
+}
+
+.Nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+
+.NavForm input{
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid white;
+  outline: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 10px;
+  width: 17rem;
+  background: none;
+  color: whitesmoke;
+  
+} 
+
+.NavForm input::placeholder{
+ opacity: 0.7;
+}
+
+.Nav ul{
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+
+}
+
+.Nav li{
+  transition: .1s ease-in-out;
+}
+
+.Nav li a{
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: whitesmoke;
+  
+}
+
+.Nav li:hover{
+  transform: scale(1.1);
+}
+
+@media(max-width:678px) {
+  .Nav{
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 100%;
+  }
+  .Nav li a{
+    padding: 10px;
+  }
+
+  .NavForm input{
+    margin-left: 10px;
+    width: 15rem;
+  }
+
+  
+}
+
+.Note{
+  color: white;
+  border: 2px solid #999;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.Footer{
+  color: white;
+  background-color: #333;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Missing{
+  min-height: 58vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+}
+
+.NewNote{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ overflow-y: auto;
+ min-height: 70vh;
+}
+
+.NewNote h1{
+  color: whitesmoke;
+  font-size: 2.5rem;
+  padding-left: 1rem;
+}
+
+
+
+.NewNoteForm{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 100%;
+  gap: 20px;
+} 
+
+.NewNoteForm input[type='text'],
+.NewNoteForm textarea{
+  width: 100%;
+  min-height: 48px;
+  padding: 0.25rem;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid whitesmoke;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 0.25rem;
+  background: none;
+  color: white;
+  padding-left: 20px;
+}
+.NewNoteForm textarea{
+
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid whitesmoke;
+  font-weight: bold;
+  resize: none;
+  height: 100px;
+}
+
+.NewNoteForm button{
+  padding: 15px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background: white;
+  color: black;
+  transition: .5s ease;
+}
+
+.NewNoteForm label{
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.NewNoteForm button:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+@media(max-width: 678px){
+  .NewNoteForm{
+    width: 90%;
+  }
+}
+
+.Note a{
+  color: white;
+  text-decoration: none;
+}
+
+.NotePage{
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  min-height: 60vh;
+  padding-left: 6rem;
+  border-top: 2px solid #999;
+  padding-top: 3rem;
+}
+
+.Buttons{
+  display: flex;
+  gap: 10px;
+}
+
+.NotePage button{
+  width: 7rem;
+  padding: 10px 0px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.Delete{
+  background-color: red;
+  color: white;
+  transition: .5s ease;
+}
+
+.Delete:hover{
+  background-color: rgb(203, 84, 84);
+}
+
+.Edit{
+  background-color: rgb(67, 67, 125);
+  color: white;
+  transition: .5s ease;
+}
+
+.Edit:hover{
+  background-color: rgb(92, 92, 137);
+}
+
+.Body{
+  overflow-y: auto;
+  width: 25rem;
+  margin: auto;
+  min-height: 70vh;
+}
+.Body h3{
+  color: white;
+}
+
+.Missing{
+  width: 25rem;
+  margin: auto;
+}
+
+.About{
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  width: 100%;
+  padding: 30px;
+}
+
+.aboutHeading{
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  
+}
+
+.para{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.para p{
+  font-weight: bold;
+  color: #e6e4e4;
+}
+
+
+
+.para h2{
+  color: white;
+}
+
+@media(max-width: 678px){
+  .Footer {
+    padding: 20px;
+    text-align: center;
+  }
 }
